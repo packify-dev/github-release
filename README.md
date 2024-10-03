@@ -1,38 +1,13 @@
-# create-svelte
+# GitHub Release API
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Latest release info: `https://ghr.packify.dev/rclone/latest` (for rclone/rclone)
 
-## Creating a project
+Other release info: `https://ghr.packify.dev/rclone/rclone-js-api/latest` (for rclone/rclone-js-api)
 
-If you're seeing this, you've probably already done this step. Congrats!
+or even shorter: `https://ghr.packify.dev/rclone/~-js-api/latest` (for rclone/rclone-js-api)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Release info for a specific version: `https://ghr.packify.dev/rclone/v1.68.1` (for rclone/rclone)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Download latest `version.txt` file: `https://ghr.packify.dev/rclone/latest/download/version.txt` (for rclone/rclone)
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Download latest linux x64 binary: `https://ghr.packify.dev/rclone/latest/download/linux/amd64` (for rclone/rclone)
