@@ -84,13 +84,14 @@ export async function GET({ params }) {
 
 	const assets: Record<string, Asset> = {};
 
-	const [ platform, arch ] = params.meta.split('/');
+	const [ platform, arch, ext ] = params.meta.split('/');
   
   data.assets.forEach((asset) => {
 		const type = parseAssetName(asset.name);
 		if (type.platform) {
 			binaries[type.platform] = binaries[type.platform] || {};
-			binaries[type.platform][type.arch] = {
+			console.log({ ext, typeExt: type.ext });
+			if (!ext || ext === type.ext) binaries[type.platform][type.arch] = {
 				url: asset.browser_download_url,
 				size: asset.size
 			};
@@ -101,7 +102,7 @@ export async function GET({ params }) {
 		};
 	});
 
-  if (!arch) {
+	if (!arch) {
     if (!assets[platform]) {
       return json(
         {
