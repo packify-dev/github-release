@@ -87,10 +87,9 @@ export async function GET({ params }) {
 	const [ platform, arch, ext ] = params.meta.split('/');
   
   data.assets.forEach((asset) => {
-		const type = parseAssetName(asset.name);
+		const type = parseAssetName(asset.name, params.repo?.replaceAll('~', params.user) ?? params.user);
 		if (type.platform) {
 			binaries[type.platform] = binaries[type.platform] || {};
-			console.log({ ext, typeExt: type.ext });
 			if (!ext || ext === type.ext) binaries[type.platform][type.arch] = {
 				url: asset.browser_download_url,
 				size: asset.size

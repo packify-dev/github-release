@@ -4,11 +4,11 @@ function removeExtension(name: string) {
   return name.replace(/\.[^0-9]*$/, '');
 }
 
-export function parseAssetName(path: string) {
-  const noExt = removeExtension(path);
-  const [name, version, platform, arch] = noExt.split('-');
+export function parseAssetName(path: string, repoName: string) {
+  const noExt = removeExtension(path).replace(repoName + '-', '');
+  const [version, platform, arch] = noExt.split('-');
   return {
-    name,
+    name: repoName,
     ext: path.replace(noExt + '.', ''),
     version,
     platform,

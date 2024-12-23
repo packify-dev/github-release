@@ -94,7 +94,7 @@ export async function GET({ params }) {
 	const assets: Record<string, Asset> = {};
 
 	data.assets.forEach((asset) => {
-		const type = parseAssetName(asset.name);
+		const type = parseAssetName(asset.name, params.repo?.replaceAll('~', params.user) ?? params.user);
 		if (type.platform) {
 			binaries[type.platform] = binaries[type.platform] || {};
 			binaries[type.platform][type.arch] = {
